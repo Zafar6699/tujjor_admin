@@ -13,8 +13,6 @@
                 </v-card-text>
 
                 <v-card-actions>
-                    <input type="hidden" v-model="hiddenId" />
-                    <input type="hidden" v-model="hiddenIndex" />
                     <v-spacer></v-spacer>
                     <v-btn
                         color="teal"
@@ -38,7 +36,7 @@
             </v-card>
         </v-dialog>
 
-        <v-dialog v-model="modal    " width="1000">
+        <v-dialog v-model="modal" width="1000">
             <v-card>
                 <v-card-title>
                     Privacy Policy
@@ -72,7 +70,6 @@
                 <v-data-table
                     :headers="headers"
                     :items="desserts"
-                    :search="search"
                     :footer-props="{
                         'items-per-page-text': ''
                     }"

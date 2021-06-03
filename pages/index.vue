@@ -3,7 +3,7 @@
         <v-dialog v-model="modal" width="1000">
             <v-card>
                 <v-card-title>
-                    Privacy Policy
+                    Privacy Polic
                 </v-card-title>
 
                 <v-divider></v-divider>
@@ -74,55 +74,7 @@
             </div>
 
             <div class="data-table">
-                <v-data-table
-                    :headers="headers"
-                    :items="desserts"
-                    :footer-props="{
-                        'items-per-page-text': ''
-                    }"
-                >
-                    <template v-slot:item.status="{ item }">
-                        <v-chip
-                            v-if="item.status == 1"
-                            color="green"
-                            x-small
-                            pill
-                            text-color="white"
-                            >Active
-                        </v-chip>
-                        <v-chip
-                            v-if="item.status == 0"
-                            color="red"
-                            x-small
-                            pill
-                            text-color="white"
-                            >Inactive</v-chip
-                        >
-                    </template>
-
-                    <template v-slot:item.image="{ item }">
-                        <div class="table-image">
-                            <img :src="item.image" alt="" />
-                        </div>
-                    </template>
-
-                    <template v-slot:item.actions="{ item }">
-                        <div class="table-actions">
-                            <button
-                                @click="openModal"
-                                type="button"
-                                class="__eye"
-                            >
-                                <fa class="eye-icon" icon="eye" />
-                            </button>
-                            <nuxt-link to="/product/edit" class="__edit">
-                                <fa class="edit-icon" icon="edit" />
-                            </nuxt-link>
-                            <button type="button" class="__delete">
-                                <fa class="delete-icon" icon="trash" />
-                            </button>
-                        </div>
-                    </template>
+                <v-data-table :headers="header" :items="dessert">
                 </v-data-table>
             </div>
         </div>
@@ -134,7 +86,7 @@ export default {
     data() {
         return {
             modal: false,
-            headers: [
+            header: [
                 { text: "Rasmi", value: "image" },
                 { text: "Mahsulot nomi", value: "name" },
                 { text: "ID nomeri", value: "id" },
@@ -143,7 +95,7 @@ export default {
                 { text: "Status", value: "status" },
                 { text: "", value: "actions" }
             ],
-            desserts: [
+            dessert: [
                 {
                     image: "/_nuxt/assets/img/pro.png",
                     name: "Nike Air 720 ",
@@ -182,11 +134,6 @@ export default {
                 }
             ]
         };
-    },
-    methods: {
-        openModal() {
-            this.modal = true;
-        }
     }
 };
 </script>

@@ -1,5 +1,6 @@
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
+    ssr: false,
     head: {
         title: "shop",
         htmlAttrs: {
@@ -29,6 +30,13 @@ export default {
     buildModules: [
         "@nuxtjs/fontawesome",
         [
+            "@nuxtjs/moment",
+            {
+                defaultLocale: "uz-latn",
+                locales: ["uz-latn", "ru"]
+            }
+        ],
+        [
             "@nuxtjs/vuetify",
             {
                 theme: {
@@ -54,16 +62,55 @@ export default {
     modules: [
         // https://go.nuxtjs.dev/axios
         "@nuxtjs/axios",
+        "@nuxtjs/auth-next",
         "@nuxtjs/style-resources",
         "bootstrap-vue/nuxt"
     ],
+
+    router: {
+        middleware: ["auth"]
+    },
+
+    auth: {
+        redirect: {
+            login: "/auth/login",
+            logout: "/auth/login",
+            callback: "/auth/login",
+            home: "/"
+        },
+        strategies: {
+            local: {
+                token: {
+                    property: "token",
+                    // required: true,
+                    // type: 'Bearer'
+                    name: "token"
+                },
+                user: {
+                    property: "data"
+                    // autoFetch: true
+                },
+                endpoints: {
+                    login: { url: "/user/login", method: "post" },
+                    user: { url: "/user/me", method: "get" }
+                }
+            }
+        }
+    },
 
     styleResources: {
         scss: ["@/assets/scss/*.scss"]
     },
 
+    env: {
+        uploads: "http://cdn.tujjor.org"
+    },
+
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
-    axios: {},
+    axios: {
+        baseURL: "http://cdn.tujjor.org/api", // Used as fallback if no runtime config is provided
+        uploads: "http://cdn.tujjor.org"
+    },
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {

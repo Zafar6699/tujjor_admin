@@ -44,7 +44,7 @@
                                     </div>
                                     <span class="right">
                                         <div class="time"><b>18:47</b></div>
-                                        <img src="img/pin.png" alt="" />
+                                        <img src="img/pin.png" alt=""/>
                                     </span>
                                 </div>
                             </a>
@@ -87,7 +87,7 @@
                                     </div>
                                     <span class="right">
                                         <div class="time"><b>18:47</b></div>
-                                        <img src="img/pin.png" alt="" />
+                                        <img src="img/pin.png" alt=""/>
                                     </span>
                                 </div>
                             </a>
@@ -130,7 +130,7 @@
                                     </div>
                                     <span class="right">
                                         <div class="time"><b>18:47</b></div>
-                                        <img src="img/pin.png" alt="" />
+                                        <img src="img/pin.png" alt=""/>
                                     </span>
                                 </div>
                             </a>
@@ -173,7 +173,7 @@
                                     </div>
                                     <span class="right">
                                         <div class="time"><b>18:47</b></div>
-                                        <img src="img/pin.png" alt="" />
+                                        <img src="img/pin.png" alt=""/>
                                     </span>
                                 </div>
                             </a>
@@ -216,7 +216,7 @@
                                     </div>
                                     <span class="right">
                                         <div class="time"><b>18:47</b></div>
-                                        <img src="img/pin.png" alt="" />
+                                        <img src="img/pin.png" alt=""/>
                                     </span>
                                 </div>
                             </a>
@@ -259,7 +259,7 @@
                                     </div>
                                     <span class="right">
                                         <div class="time"><b>18:47</b></div>
-                                        <img src="img/pin.png" alt="" />
+                                        <img src="img/pin.png" alt=""/>
                                     </span>
                                 </div>
                             </a>
@@ -302,7 +302,7 @@
                                     </div>
                                     <span class="right">
                                         <div class="time"><b>18:47</b></div>
-                                        <img src="img/pin.png" alt="" />
+                                        <img src="img/pin.png" alt=""/>
                                     </span>
                                 </div>
                             </a>
@@ -345,7 +345,7 @@
                                     </div>
                                     <span class="right">
                                         <div class="time"><b>18:47</b></div>
-                                        <img src="img/pin.png" alt="" />
+                                        <img src="img/pin.png" alt=""/>
                                     </span>
                                 </div>
                             </a>
@@ -388,7 +388,7 @@
                                     </div>
                                     <span class="right">
                                         <div class="time"><b>18:47</b></div>
-                                        <img src="img/pin.png" alt="" />
+                                        <img src="img/pin.png" alt=""/>
                                     </span>
                                 </div>
                             </a>
@@ -431,7 +431,7 @@
                                     </div>
                                     <span class="right">
                                         <div class="time"><b>18:47</b></div>
-                                        <img src="img/pin.png" alt="" />
+                                        <img src="img/pin.png" alt=""/>
                                     </span>
                                 </div>
                             </a>
@@ -474,7 +474,7 @@
                                     </div>
                                     <span class="right">
                                         <div class="time"><b>18:47</b></div>
-                                        <img src="img/pin.png" alt="" />
+                                        <img src="img/pin.png" alt=""/>
                                     </span>
                                 </div>
                             </a>
@@ -517,7 +517,7 @@
                                     </div>
                                     <span class="right">
                                         <div class="time"><b>18:47</b></div>
-                                        <img src="img/pin.png" alt="" />
+                                        <img src="img/pin.png" alt=""/>
                                     </span>
                                 </div>
                             </a>
@@ -560,7 +560,7 @@
                                     </div>
                                     <span class="right">
                                         <div class="time"><b>18:47</b></div>
-                                        <img src="img/pin.png" alt="" />
+                                        <img src="img/pin.png" alt=""/>
                                     </span>
                                 </div>
                             </a>
@@ -586,7 +586,7 @@
                             </div>
                             <div class="right">
                                 <a href="#"
-                                    ><img src="img/info_chat.png" alt=""
+                                ><img src="img/info_chat.png" alt=""
                                 /></a>
                             </div>
                         </div>
@@ -609,7 +609,7 @@
                                     </p>
                                     <div class="clock_sms">
                                         21:00
-                                        <img src="img/ketdi_sms.png" alt="" />
+                                        <img src="img/ketdi_sms.png" alt=""/>
                                     </div>
                                 </div>
                             </div>
@@ -619,7 +619,7 @@
                                     <p>Salom. Dars neccida</p>
                                     <div class="clock_sms">
                                         21:00
-                                        <img src="img/ketdi_sms.png" alt="" />
+                                        <img src="img/ketdi_sms.png" alt=""/>
                                     </div>
                                 </div>
                             </div>
@@ -705,7 +705,7 @@
                                     <button
                                         onclick="document.getElementById('getFile').click()"
                                     >
-                                        <img src="img/file_select.png" alt="" />
+                                        <img src="img/file_select.png" alt=""/>
                                     </button>
                                     <input
                                         type="file"
@@ -715,7 +715,7 @@
                                     />
                                 </div>
                                 <button>
-                                    <img src="img/smile.png" alt="" />
+                                    <img src="img/smile.png" alt=""/>
                                 </button>
                             </div>
                             <div class="typing">
@@ -749,6 +749,7 @@ div.chat {
     div.content_chat {
         display: flex;
         width: 100%;
+
         div.row_left::-webkit-scrollbar {
             width: 3px;
             background-color: #f5f5f5;
@@ -759,40 +760,50 @@ div.chat {
             width: 5px;
             border-radius: 5px;
         }
+
         div.row_left::-webkit-scrollbar-thumb:hover {
             background: #8e8e8e;
             width: 5px;
         }
+
         div.row_left {
             width: 30%;
             border-right: 1px solid #e4e4e4;
             overflow-y: scroll;
             height: calc(100vh - 70px);
             background-color: #fff;
+
             div.tab_content_chat {
                 nav {
                     a:hover {
                         background-color: #f5f5f5;
                     }
+
                     a {
                         width: 100%;
+
                         div.click_chat {
                             background-color: #edf4fa !important;
+
                             span.right {
                                 background-color: #edf4fa !important;
                             }
                         }
+
                         div.a_link:hover {
                             background-color: #f5f5f5;
                         }
+
                         div.a_link:hover span.right {
                             background-color: #f5f5f5;
                         }
+
                         div.a_link {
                             width: 100%;
                             overflow: hidden;
                             display: flex;
                             position: relative;
+
                             span.right {
                                 position: absolute;
                                 width: 50px;
@@ -818,15 +829,18 @@ div.chat {
                                     font-size: 13px;
                                     color: #ffffff;
                                 }
+
                                 img {
                                     margin-top: -15px;
                                 }
+
                                 div {
                                     width: 100%;
                                     display: flex;
                                     justify-content: flex-end;
                                     margin-bottom: -15px;
                                 }
+
                                 b {
                                     font-family: Roboto;
                                     font-style: normal;
@@ -837,14 +851,17 @@ div.chat {
                                     color: #666666;
                                 }
                             }
+
                             span.pro_img {
                                 padding: 10px 15px;
+
                                 div.head_img {
                                     width: 50px;
                                     height: 50px;
                                     border-radius: 100%;
                                     overflow: hidden;
                                     position: relative;
+
                                     img.head {
                                         position: absolute;
                                         top: 50%;
@@ -853,11 +870,13 @@ div.chat {
                                         transform: translate(-50%, -50%);
                                     }
                                 }
+
                                 div.img {
                                     position: relative;
                                     width: 50px;
                                     height: 50px;
                                     border-radius: 100%;
+
                                     img.online {
                                         position: absolute !important;
                                         bottom: 0px !important;
@@ -866,10 +885,12 @@ div.chat {
                                     }
                                 }
                             }
+
                             div.info__item {
                                 width: 100%;
                                 display: flex;
                                 align-items: center;
+
                                 div.top {
                                     // width: 100%;
                                     display: flex;
@@ -882,11 +903,13 @@ div.chat {
                                         width: 3000000px;
                                         align-items: center;
                                         overflow: hidden;
+
                                         div {
                                             width: 100%;
                                             // overflow-x: hidden;
                                             display: flex;
                                             align-items: center;
+
                                             b {
                                                 font-family: Roboto;
                                                 font-style: normal;
@@ -897,12 +920,14 @@ div.chat {
                                                 margin-right: 3px;
                                                 margin-top: 5px;
                                             }
+
                                             img {
                                                 width: 14px;
                                                 height: 14px;
                                                 margin-right: 5px;
                                             }
                                         }
+
                                         h2 {
                                             font-family: Roboto;
                                             font-style: normal;
@@ -914,6 +939,7 @@ div.chat {
                                             margin-bottom: 0px;
                                             color: #333333;
                                         }
+
                                         h3 {
                                             font-family: Roboto;
                                             font-style: normal;
@@ -935,6 +961,7 @@ div.chat {
                     display: none;
                 }
             }
+
             div.tabindex {
                 ul {
                     background-color: #f5f5f5;
@@ -942,18 +969,23 @@ div.chat {
                     display: flex;
                     padding-left: 0px;
                     margin-bottom: 0px;
+
                     li.act_chat_index {
                         background-color: #246eb3 !important;
+
                         svg path {
                             fill: white;
                         }
+
                         div {
                             color: white;
                         }
                     }
+
                     li:hover {
                         background-color: #e4e4e4;
                     }
+
                     li {
                         div.no_ra {
                             position: absolute;
@@ -968,6 +1000,7 @@ div.chat {
                             font-size: 13px;
                             color: #ffffff;
                         }
+
                         position: relative;
                         width: 33.33%;
                         display: flex;
@@ -975,9 +1008,11 @@ div.chat {
                         cursor: pointer;
                         flex-wrap: wrap;
                         justify-content: center;
+
                         svg path {
                             fill: #333333;
                         }
+
                         div {
                             width: 100%;
                             margin-top: 6px;
@@ -992,12 +1027,15 @@ div.chat {
                     }
                 }
             }
+
             div.izlash {
                 padding: 10px 15px;
                 width: 100%;
+
                 input:focus {
                     outline: none;
                 }
+
                 input {
                     width: 100%;
                     height: 40px;
@@ -1009,8 +1047,10 @@ div.chat {
                 }
             }
         }
+
         div.row_right {
             width: 70%;
+
             div.messages {
                 display: flex;
                 width: 100%;
@@ -1018,6 +1058,7 @@ div.chat {
                 align-items: center;
                 background-color: #edf4fa;
                 height: 100%;
+
                 h6 {
                     font-family: Roboto;
                     font-style: normal;
@@ -1028,14 +1069,17 @@ div.chat {
                     color: #999999;
                 }
             }
+
             div.message {
                 position: relative;
                 width: 100%;
                 height: 100%;
                 background-color: #edf4fa;
+
                 div.test_chat {
                     height: 59px;
                 }
+
                 div.top {
                     position: absolute;
                     width: 100%;
@@ -1045,17 +1089,21 @@ div.chat {
                     align-items: center;
                     background-color: #fff;
                     padding: 7.5px 0px;
+
                     div.right {
                         margin-right: 20px;
                         align-items: center;
                     }
+
                     div.left {
                         display: flex;
                         align-items: center;
+
                         div.two_info {
                             display: flex;
                             align-items: center;
                             flex-wrap: wrap;
+
                             h4 {
                                 width: 100%;
                                 font-family: Roboto;
@@ -1066,6 +1114,7 @@ div.chat {
                                 margin-bottom: 0px;
                                 color: #333333;
                             }
+
                             b {
                                 font-family: Roboto;
                                 font-style: normal;
@@ -1076,15 +1125,18 @@ div.chat {
                                 margin-top: 3px;
                             }
                         }
+
                         span {
                             padding: 0px 15px;
                         }
+
                         span div {
                             width: 45px;
                             height: 45px;
                             position: relative;
                             overflow: hidden;
                             border-radius: 100%;
+
                             img {
                                 position: absolute;
                                 top: 50%;
@@ -1095,6 +1147,7 @@ div.chat {
                         }
                     }
                 }
+
                 div.message_content::-webkit-scrollbar {
                     width: 5px;
                     background-color: #f5f5f5;
@@ -1105,20 +1158,24 @@ div.chat {
                     width: 5px;
                     border-radius: 5px;
                 }
+
                 div.message_content::-webkit-scrollbar-thumb:hover {
                     background: #8e8e8e;
                     width: 5px;
                 }
+
                 div.message_content {
                     padding: 0px 15px;
                     overflow-y: scroll;
                     height: calc(100vh - 180px);
                     margin-bottom: 48px;
+
                     div.sms_main {
                         width: 100%;
                         display: flex;
                         justify-content: flex-end;
                         margin-bottom: 5px;
+
                         div.sms_in_main {
                             // position: absolute;
                             max-width: 70%;
@@ -1127,6 +1184,7 @@ div.chat {
                             padding: 10px 8px;
                             display: flex;
                             right: 0;
+
                             div.clock_sms {
                                 font-family: Roboto;
                                 height: 100%;
@@ -1142,11 +1200,13 @@ div.chat {
                                 align-items: center;
                                 color: #999999;
                                 align-items: flex-end;
+
                                 img {
                                     margin-bottom: 2px;
                                     margin-left: 4px;
                                 }
                             }
+
                             p {
                                 font-family: Roboto;
                                 font-style: normal;
@@ -1158,6 +1218,7 @@ div.chat {
                             }
                         }
                     }
+
                     div.group_sms {
                         max-width: 70%;
                         background-color: #fff;
@@ -1165,9 +1226,11 @@ div.chat {
                         padding: 10px 8px;
                         display: flex;
                         right: 0;
+
                         div.sms_img {
                             display: flex;
                             position: relative;
+
                             img.sms_online_sm {
                                 position: absolute;
                                 right: 0;
@@ -1175,12 +1238,14 @@ div.chat {
                                 width: 9px !important;
                                 height: 9px !important;
                             }
+
                             div.img {
                                 width: 40px;
                                 height: 40px;
                                 border-radius: 100%;
                                 overflow: hidden;
                                 position: relative;
+
                                 img {
                                     position: absolute;
                                     width: 100%;
@@ -1190,9 +1255,11 @@ div.chat {
                                 }
                             }
                         }
+
                         div.with_link {
                             padding-left: 8px;
                             flex-wrap: wrap;
+
                             div.link_sms {
                                 a {
                                     font-family: Roboto;
@@ -1205,6 +1272,7 @@ div.chat {
                                     color: #246eb3;
                                 }
                             }
+
                             div.sms_in_your2 {
                                 span.clock_sms {
                                     display: flex;
@@ -1220,6 +1288,7 @@ div.chat {
                                     text-align: center;
                                     color: #999999;
                                 }
+
                                 p {
                                     margin-bottom: 0px;
                                     margin-top: 4px;
@@ -1231,6 +1300,7 @@ div.chat {
 
                                     color: #333333;
                                 }
+
                                 display: flex;
                             }
                         }
@@ -1241,6 +1311,7 @@ div.chat {
                         display: flex;
                         justify-content: flex-start;
                         margin-bottom: 5px;
+
                         div.sms_in_your {
                             max-width: 70%;
                             background-color: #fff;
@@ -1248,6 +1319,7 @@ div.chat {
                             padding: 10px 8px;
                             display: flex;
                             right: 0;
+
                             span {
                                 font-family: Roboto;
                                 height: 100%;
@@ -1264,6 +1336,7 @@ div.chat {
                                 color: #999999;
                                 align-items: flex-end;
                             }
+
                             p {
                                 font-family: Roboto;
                                 font-style: normal;
@@ -1275,11 +1348,13 @@ div.chat {
                             }
                         }
                     }
+
                     div.vremya {
                         width: 100%;
                         margin: 20px 0px;
                         display: flex;
                         justify-content: center;
+
                         b {
                             font-family: Roboto;
                             font-style: normal;
@@ -1292,6 +1367,7 @@ div.chat {
                     }
                 }
             }
+
             div.bottom {
                 position: absolute;
                 bottom: 0;
@@ -1300,8 +1376,10 @@ div.chat {
                 width: 100%;
                 background-color: #fff;
                 width: 100%;
+
                 div.typing {
                     width: 100%;
+
                     input {
                         width: 100%;
                         border: none;
@@ -1314,6 +1392,7 @@ div.chat {
 
                         color: #333333;
                     }
+
                     input:focus {
                         outline: none;
                     }
@@ -1331,8 +1410,10 @@ div.chat {
                         cursor: pointer;
                     }
                 }
+
                 div.left_files {
                     display: flex;
+
                     div.file {
                         button {
                             background-color: transparent;
@@ -1340,6 +1421,7 @@ div.chat {
                             cursor: pointer;
                         }
                     }
+
                     button {
                         background-color: transparent;
                         border: none;

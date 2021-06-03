@@ -4,32 +4,30 @@
             <h3>TUJJOR</h3>
             <h1>Login</h1>
 
-            <v-text-field
-                label="Login"
-                :rules="[rules.required]"
-                outlined
-                dense
-            ></v-text-field>
+            <form @submit.prevent="userLogin">
+                <v-text-field
+                    label="Telefon nomer"
+                    :rules="[rules.required]"
+                    outlined
+                    v-model="user.phone"
+                    placeholder="+998 (__) ___ -__-__"
+                    v-mask="'+998 (##) ###-##-##'"
+                    dense
+                ></v-text-field>
 
-            <v-text-field
-                v-model="password"
-                :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-                :rules="[rules.required, rules.min]"
-                :type="show ? 'text' : 'password'"
-                label="Parol"
-                @click:append="show = !show"
-                dense
-                outlined
-            ></v-text-field>
-            <!-- <div class="form-group">
-                <h2>Email</h2>
-                <input type="text" placeholder="Emailni kiriting">
-            </div>
-            <div class="form-group">
-                <h2>Parol</h2>
-                <input type="password" placeholder="Parolni kiriting">
-            </div> -->
-            <button>Kirish</button>
+                <v-text-field
+                    v-model="user.password"
+                    :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                    :rules="[rules.required]"
+                    :type="show ? 'text' : 'password'"
+                    label="Parol"
+                    @click:append="show = !show"
+                    dense
+                    outlined
+                ></v-text-field>
+
+                <button>Kirish</button>
+            </form>
             <h6>Login va parol yo'q bo'lsa ariza qoldiring</h6>
             <nuxt-link class="to-register" to="/auth/register"
                 >Ariza qoldirish</nuxt-link
@@ -44,15 +42,35 @@ export default {
     data() {
         return {
             show: false,
-            password: "",
             rules: {
                 required: value => !!value || "To'ldirilishi shart",
-                min: v => v.length >= 4 || "Kamida 4 ta belgi",
 
                 emailMatch: () =>
                     `The email and password you entered don't match`
+            },
+            user: {
+                phone: "",
+                password: ""
             }
         };
+    },
+    methods: {
+        async userLogin() {
+            let phone = this.user.phone.replace(/[^0-9]/g, "");
+            console.log(phone);
+            try {
+                let response = await this.$auth.loginWith("local", {
+                    data: {
+                        phone: phone,
+                        password: this.user.password
+                    }
+                });
+                this.$router.push("/");
+                console.log(response);
+            } catch (err) {
+                console.log(err);
+            }
+        }
     }
 };
 </script>

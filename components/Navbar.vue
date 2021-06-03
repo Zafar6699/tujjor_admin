@@ -4,7 +4,7 @@
             <nuxt-link to="/">
                 <div class="logo-shop__inner">
                     <!-- <fa icon="cubes"/> -->
-                    <h1>TUJJOR-SHOP</h1>
+                    <h1>TUJJOR-ADMIN</h1>
                 </div>
             </nuxt-link>
         </div>
@@ -52,32 +52,59 @@ export default {
                 {
                     route: "/",
                     ricon: "home",
-                    title: "Главная"
+                    title: "Dashboard"
                 },
                 {
                     route: "/product",
                     ricon: "cube",
-                    title: "Продукты"
+                    title: "Mahsulotlar"
                 },
                 {
-                    route: "/shops",
-                    ricon: "store-alt",
-                    title: "Магазины"
+                    route: "/category",
+                    ricon: "list-ul",
+                    title: "Kategoriyalar"
                 },
+                {
+                    route: "/shop",
+                    ricon: "store-alt",
+                    title: "Do'konlar"
+                },
+
                 {
                     route: "/order",
                     ricon: "shopping-cart",
-                    title: "Заказы"
+                    title: "Buyurtmalar"
+                },
+                {
+                    route: "/brand",
+                    ricon: "copyright",
+                    title: "Brendlar"
                 },
                 {
                     route: "/statistics",
                     ricon: "chart-line",
-                    title: "Статистика"
+                    title: "Statistika"
                 },
                 {
                     route: "/chat",
                     ricon: "comments",
-                    title: "Чат"
+                    title: "Chat"
+                },
+
+                {
+                    route: "/info",
+                    ricon: "info",
+                    title: "Info"
+                },
+                {
+                    route: "/help",
+                    ricon: "question",
+                    title: "Yordam"
+                },
+                {
+                    route: "/news",
+                    ricon: "rss",
+                    title: "Yangiliklar"
                 },
                 {
                     ricon: "users",

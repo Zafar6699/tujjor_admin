@@ -203,4 +203,63 @@ div.table-actions .__delete {
   -webkit-transform: translateX(-50px);
           transform: translateX(-50px);
 }
+
+.accordion-category {
+  margin-top: 30px;
+}
+
+.accordion-category ul.tree-list {
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 0px;
+}
+
+.accordion-category ul.tree-list li {
+  width: 100%;
+}
+
+.accordion-category ul.tree-list li button.value {
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-bottom: 1px solid #f7d6b0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.accordion-category ul.tree-list li button.value:hover {
+  color: #f7931f;
+}
+
+.accordion-category ul.tree-list li button.value .rotate {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.accordion-category ul.tree-list li .actions {
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+}
+
+.accordion-category ul.tree-list li ul.children-ul {
+  list-style-type: none;
+  padding-left: 20px;
+  margin: 0px;
+  display: none;
+  border-left: 2px solid #e0e0e0;
+}
+
+.accordion-category ul.tree-list li ul.active {
+  display: block;
+}
 /*# sourceMappingURL=colors.css.map */

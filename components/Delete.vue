@@ -1,6 +1,10 @@
 <template>
     <div>
-        <v-dialog v-model="isOpen" width="420" @click:outside="closeModal">
+        <v-dialog
+            v-model="isOpen"
+            width="420"
+            @click:outside="$emit('deleteClose')"
+        >
             <v-card>
                 <v-card-title class="headline">
                     Ma`lumotni o'chirmoqchimisiz?
@@ -18,7 +22,7 @@
                     <v-spacer></v-spacer>
                     <v-btn
                         color="teal"
-                        @click="deleteRequest"
+                        @click="$emit('deleteRequest', id)"
                         depressed
                         outlined
                         text
@@ -27,7 +31,7 @@
                     </v-btn>
                     <v-btn
                         color="error"
-                        @click="closeModal"
+                        @click="$emit('deleteClose')"
                         depressed
                         outlined
                         text
@@ -42,17 +46,12 @@
 
 <script>
 export default {
-    computed: {
-        isOpen() {
-            return this.$store.state.category.toggleConfirm;
-        }
-    },
-    methods: {
-        closeModal() {
-            this.$store.commit("category/isOpen");
+    props: {
+        isOpen: {
+            type: Boolean
         },
-        deleteRequest() {
-            this.$store.dispatch("category/deleteCategory");
+        id: {
+            type: String
         }
     }
 };
