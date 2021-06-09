@@ -1,25 +1,30 @@
 <template>
     <div>
         <div class="page-title-box">
-            <h2>Yordam</h2>
+            <ul class="map-site">
+                <li>
+                    <nuxt-link to="/">Главная / </nuxt-link>
+                </li>
+                <li>
+                    <nuxt-link to="/help">Все вопросы / </nuxt-link>
+                </li>
+                <li>Добавить вопрос</li>
+            </ul>
+
+            <button class="add-form" @click="addInfo">
+                Сохранить
+            </button>
         </div>
         <div class="box-white">
-            <div class="box-title-top">
-                <h4>Savol qo'shish</h4>
-                <button class="add-form mt-4" @click="addInfo">
-                    Saqlash
-                </button>
-            </div>
-
             <div class="d-flex justify-content-center">
                 <v-tabs v-model="tab">
                     <!-- <v-tabs-slider color="primary"></v-tabs-slider> -->
 
                     <v-tab>
-                        O'zbekcha
+                        Узбекская
                     </v-tab>
                     <v-tab>
-                        Ruscha
+                        Русский
                     </v-tab>
                 </v-tabs>
             </div>
@@ -70,7 +75,7 @@ export default {
     },
     data() {
         return {
-            validate: [value => !!value || "To'ldirilishi shart"],
+            validate: [value => !!value || "Обязательное поле !!!"],
             valid: true,
 
             editorConfig: {

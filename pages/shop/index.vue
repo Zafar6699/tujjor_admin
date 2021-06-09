@@ -18,18 +18,20 @@
         </v-dialog>
 
         <div class="page-title-box">
-            <h2>Магазины</h2>
+            <ul class="map-site">
+                <li>
+                    <nuxt-link to="/">Главная / </nuxt-link>
+                </li>
+                <li>Магазины</li>
+            </ul>
+
+            <button class="add-form" @click="modalAdd = true">
+                <fa icon="plus" />
+                Добавить магазины
+            </button>
         </div>
 
         <div class="box-white">
-            <div class="box-title-top">
-                <h4>Все магазины</h4>
-
-                <nuxt-link class="add-form" to="/product/add">
-                    <fa icon="plus" /> Добавить магазины</nuxt-link
-                >
-            </div>
-
             <Table
                 :header="header"
                 :data="data"
@@ -47,11 +49,11 @@ export default {
         return {
             modal: false,
             header: [
-                { text: "Rasmi", value: "image" },
-                { text: "Nomi", value: "name" },
-                { text: "Adress", value: "info.address" },
-                { text: "Email", value: "info.email" },
-                { text: "Status", value: "status" },
+                { text: "Картина", value: "image" },
+                { text: "Названия", value: "name" },
+                { text: "Адресс", value: "info.address" },
+                { text: "Эмаил", value: "info.email" },
+                { text: "Статус", value: "status" },
                 { text: "", value: "actions" }
             ],
             data: [],
@@ -64,6 +66,10 @@ export default {
         let a = await this.$axios.$get("/shop/all");
 
         this.data = a.data;
+    },
+    methods: {
+        changeStatus() {},
+        deleteOpen() {}
     }
 };
 </script>

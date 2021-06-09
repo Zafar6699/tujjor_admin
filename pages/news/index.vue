@@ -1,7 +1,16 @@
 <template>
     <div>
         <div class="page-title-box">
-            <h2>Yangiliklar</h2>
+            <ul class="map-site">
+                <li>
+                    <nuxt-link to="/">Главная / </nuxt-link>
+                </li>
+                <li>Новости</li>
+            </ul>
+
+            <nuxt-link class="add-form" to="/news/add">
+                <fa icon="plus" /> Добавить новости</nuxt-link
+            >
         </div>
 
         <Delete
@@ -13,13 +22,6 @@
         />
 
         <div class="box-white">
-            <div class="box-title-top">
-                <h4>Barcha yangiliklar</h4>
-                <nuxt-link class="add-form" to="/news/add">
-                    <fa icon="plus" /> Yangilik qo'shish</nuxt-link
-                >
-            </div>
-
             <Table
                 :header="header"
                 :data="data"

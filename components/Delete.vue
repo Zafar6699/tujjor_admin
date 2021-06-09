@@ -7,13 +7,13 @@
         >
             <v-card>
                 <v-card-title class="headline">
-                    Ma`lumotni o'chirmoqchimisiz?
+                    Вы хотите удалить данные?
                 </v-card-title>
                 <v-card-text class="d-flex justify-content-center">
                     <fa class="danger-delete" icon="exclamation-triangle" />
                 </v-card-text>
                 <v-card-text>
-                    Ma`lumot o'chirilgandan keyin uni qayta tiklash imloni yo'q
+                    Удаленные данные не будут восстановлены
                 </v-card-text>
 
                 <v-card-actions>
@@ -27,7 +27,7 @@
                         outlined
                         text
                     >
-                        Ha
+                        Да
                     </v-btn>
                     <v-btn
                         color="error"
@@ -36,7 +36,7 @@
                         outlined
                         text
                     >
-                        Yo'q
+                        Нет
                     </v-btn>
                 </v-card-actions>
             </v-card>

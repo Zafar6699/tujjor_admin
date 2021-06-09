@@ -31,18 +31,18 @@
         </button>
 
         <ul class="children-ul" v-if="node.children && node.children.length">
-            <node
+            <children
                 v-for="(child, index) in node.children"
                 :key="index"
                 :node="child"
-            ></node>
+            ></children>
         </ul>
     </li>
 </template>
 
 <script>
 export default {
-    name: "node",
+    name: "children",
     props: {
         node: Object
     },

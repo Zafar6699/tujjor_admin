@@ -9,21 +9,21 @@
                 <v-card v-if="category != null">
                     <div>
                         <v-card-title>
-                            Kategoriyani o'zgartirish
+                            Изменить категорию
                         </v-card-title>
                     </div>
 
                     <div class="modal_body">
                         <v-text-field
                             v-model="category.name.uz"
-                            label="Kategoriya nomi (Uz)"
+                            label="Категория (Уз)"
                             :rules="validate1"
                             outlined
                             dense
                         ></v-text-field>
                         <v-text-field
                             v-model="category.name.ru"
-                            label="Kategoriya nomi (Ru)"
+                            label="Категория (Ру)"
                             :rules="validate1"
                             outlined
                             dense
@@ -33,7 +33,7 @@
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn color="primary" text @click="edit">
-                            O'zgartirish
+                            Изменить
                         </v-btn>
                     </v-card-actions>
                 </v-card>

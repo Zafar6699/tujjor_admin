@@ -1,7 +1,16 @@
 <template>
     <div>
         <div class="page-title-box">
-            <h2>Yordam</h2>
+            <ul class="map-site">
+                <li>
+                    <nuxt-link to="/">Главная / </nuxt-link>
+                </li>
+                <li>Все вопросы</li>
+            </ul>
+
+            <nuxt-link class="add-form" to="/help/add">
+                <fa icon="plus" /> Добавить вопрос</nuxt-link
+            >
         </div>
 
         <Delete
@@ -13,13 +22,6 @@
         />
 
         <div class="box-white">
-            <div class="box-title-top">
-                <h4>Barcha savollar</h4>
-                <nuxt-link class="add-form" to="/help/add">
-                    <fa icon="plus" /> Savol qo'shish</nuxt-link
-                >
-            </div>
-
             <Table
                 :header="header"
                 :data="data"

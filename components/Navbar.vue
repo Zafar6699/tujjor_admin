@@ -52,77 +52,78 @@ export default {
                 {
                     route: "/",
                     ricon: "home",
-                    title: "Dashboard"
+                    title: "Главная"
                 },
                 {
                     route: "/product",
                     ricon: "cube",
-                    title: "Mahsulotlar"
+                    title: "Продукты"
                 },
                 {
                     route: "/category",
                     ricon: "list-ul",
-                    title: "Kategoriyalar"
+                    title: "Категории"
                 },
                 {
                     route: "/shop",
                     ricon: "store-alt",
-                    title: "Do'konlar"
+                    title: "Магазины"
                 },
 
                 {
                     route: "/order",
                     ricon: "shopping-cart",
-                    title: "Buyurtmalar"
+                    title: "Заказы"
                 },
                 {
                     route: "/brand",
                     ricon: "copyright",
-                    title: "Brendlar"
+                    title: "Бренды"
                 },
                 {
                     route: "/statistics",
                     ricon: "chart-line",
-                    title: "Statistika"
+                    title: "Статистика"
                 },
                 {
                     route: "/chat",
                     ricon: "comments",
-                    title: "Chat"
+                    title: "Чат"
                 },
 
                 {
                     route: "/info",
                     ricon: "info",
-                    title: "Info"
+                    title: "Информация"
                 },
                 {
                     route: "/help",
                     ricon: "question",
-                    title: "Yordam"
+                    title: "Помощь"
                 },
                 {
                     route: "/news",
                     ricon: "rss",
-                    title: "Yangiliklar"
+                    title: "Новости"
                 },
+                // {
+                //     route: "/slider",
+                //     ricon: "images",
+                //     title: "Слайдер"
+                // },
                 {
-                    ricon: "users",
-                    title: "Foydalanuvchilar",
+                    ricon: "link",
+                    title: " Управление",
                     licon: "chevron-down",
                     isOpen: false,
                     items: [
                         {
-                            itemRoute: "/adminlar",
-                            itemTitle: "Adminlar"
+                            itemRoute: "/slider",
+                            itemTitle: "Слайдер"
                         },
                         {
-                            itemRoute: "/adminlar",
-                            itemTitle: "Adminlar"
-                        },
-                        {
-                            itemRoute: "/adminlar",
-                            itemTitle: "Adminlar"
+                            itemRoute: "/banner",
+                            itemTitle: "Баннеры"
                         }
                     ]
                 },

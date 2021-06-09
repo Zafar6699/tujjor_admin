@@ -5,20 +5,20 @@
                 <v-card>
                     <div>
                         <v-card-title>
-                            Kategoriya qo'shish
+                            Добавить категорию
                         </v-card-title>
                     </div>
 
                     <div class="modal_body">
                         <v-text-field
-                            label="Kategoriya nomi (Uz)"
+                            label="Категория (Уз)"
                             :rules="validate1"
                             outlined
                             dense
                             v-model="category.name.uz"
                         ></v-text-field>
                         <v-text-field
-                            label="Kategoriya nomi (Ru)"
+                            label="Категория (Ру)"
                             :rules="validate1"
                             outlined
                             dense
@@ -29,7 +29,7 @@
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn color="primary" text @click="addCategory">
-                            Qo'shish
+                            Добавить
                         </v-btn>
                     </v-card-actions>
                 </v-card>
@@ -40,25 +40,29 @@
         <CategoryEdit />
 
         <div class="page-title-box">
-            <h2>Kategoriyalar</h2>
+            <ul class="map-site">
+                <li>
+                    <nuxt-link to="/">Главная / </nuxt-link>
+                </li>
+                <li>Категории</li>
+            </ul>
+
+            <button class="add-form" @click="modalAdd = true">
+                <fa icon="plus" />
+                Добавить категорию
+            </button>
         </div>
 
         <div class="box-white" v-if="categories != null">
-            <div class="box-title-top">
-                <h4>Barcha kategoriyalar</h4>
-
-                <button class="add-form" @click="modalAdd = true">
-                    <fa icon="plus" />
-                    Kategoriya qo'shish
-                </button>
-            </div>
-
             <div class="accordion-category">
-                <tree
+                <ul
+                    class="tree-list"
                     v-for="(item, index) in categories"
                     :key="index"
                     :tree="item"
-                ></tree>
+                >
+                    <node-tree :node="item"></node-tree>
+                </ul>
             </div>
         </div>
     </div>

@@ -1,19 +1,9 @@
 <template>
     <div>
         <div class="data-table">
-            <v-card-title>
-                <v-text-field
-                    v-model="search"
-                    append-icon="mdi-magnify"
-                    label="Izlash"
-                    single-line
-                    hide-details
-                ></v-text-field>
-            </v-card-title>
             <v-data-table
                 :headers="header"
                 :items="data"
-                :search="search"
                 :footer-props="{
                     'items-per-page-text': ''
                 }"
@@ -115,9 +105,7 @@ export default {
         }
     },
     data() {
-        return {
-            search: ""
-        };
+        return {};
     }
 
     // methods: {

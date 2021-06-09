@@ -1,36 +1,69 @@
 <template>
     <div>
         <div class="page-title-box">
-            <h2>Yangiliklar</h2>
+            <ul class="map-site">
+                <li>
+                    <nuxt-link to="/">Главная / </nuxt-link>
+                </li>
+                <li>
+                    <nuxt-link to="/news">Новости / </nuxt-link>
+                </li>
+                <li>Добавить новости</li>
+            </ul>
+
+            <button class="add-form" @click="addInfo">
+                Сохранить
+            </button>
         </div>
         <div class="box-white">
-            <div class="box-title-top">
-                <h4>Yangilik qo'shish</h4>
-                <button class="add-form mt-4" @click="addInfo">
-                    Saqlash
-                </button>
-            </div>
-
             <v-file-input
                 class="mt-5"
                 accept="image/png, image/jpeg, image/bmp, video/*"
                 prepend-icon="mdi-camera"
                 outlined
                 dense
-                label="Yangilik uchun asosiy rasm yoki video"
+                label="Картинка или видео для новинки"
                 :rules="validate"
                 v-model="info.file"
             ></v-file-input>
+
+            <v-menu
+                ref="menu"
+                v-model="menu"
+                :close-on-content-click="true"
+                :return-value.sync="date"
+                min-width="auto"
+            >
+                <template v-slot:activator="{ on, attrs }">
+                    <v-text-field
+                        v-model="date"
+                        label="Picker in menu"
+                        prepend-icon="mdi-calendar"
+                        readonly
+                        v-bind="attrs"
+                        v-on="on"
+                    ></v-text-field>
+                </template>
+                <v-date-picker v-model="date" no-title>
+                    <v-spacer></v-spacer>
+                    <v-btn text color="primary" @click="menu = false">
+                        Cancel
+                    </v-btn>
+                    <v-btn text color="primary" @click="$refs.menu.save(date)">
+                        OK
+                    </v-btn>
+                </v-date-picker>
+            </v-menu>
 
             <div class="d-flex justify-content-center">
                 <v-tabs v-model="tab">
                     <!-- <v-tabs-slider color="primary"></v-tabs-slider> -->
 
                     <v-tab>
-                        O'zbekcha
+                        Узбекская
                     </v-tab>
                     <v-tab>
-                        Ruscha
+                        Русский
                     </v-tab>
                 </v-tabs>
             </div>
@@ -81,7 +114,8 @@ export default {
     },
     data() {
         return {
-            validate: [value => !!value || "To'ldirilishi shart"],
+            date: new Date().toISOString().substr(0, 10),
+            validate: [value => !!value || "Обязательное поле !!!"],
             valid: true,
 
             editorConfig: {
@@ -124,6 +158,7 @@ export default {
                 fd.append("title[ru]", this.info.title.ru);
                 fd.append("description[uz]", this.info.description.uz);
                 fd.append("description[ru]", this.info.description.ru);
+                fd.append("startTime", this.date.substring(0, 10));
 
                 this.$axios({
                     method: "POST",
@@ -137,13 +172,5 @@ export default {
     }
 };
 </script>
-
-1330 420 218.75 Zafar -- 54.6 + 43.75 + 43.75 + 36.45 + 43.75 + 36.45 + 31.25 +
-31.25 = 277.5 Jamshid -- 54.6 + 43.75 + 43.75 + 36.45 + 43.75 + 36.45 + 31.25 +
-31.25 = 277.5 Javlon -- 54.6 + 43.75 + 43.75 + 36.45 + 43.75 + 36.45 + 31.25 +
-31.25 = 277.5 Jasur -- 36.45 + 43.75 + 36.45 + 31.25 + 31.25 = 179.15 Ismat --
-43.75 + 36.45 + 31.25 + 31.25 = Javohir -- 36.45 + 31.25 + 31.25 + Alijon --
-31.25 + 31.25 + Hasan -- 54.6 + 43.75 + 43.75 + 36.45 + Avaz -- 43.75 + 36.45 +
-43.75 + 36.45 +
 
 <style></style>

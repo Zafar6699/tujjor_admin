@@ -18,8 +18,35 @@ a:hover {
 .v-application--wrap {
     background: #f5f9ff !important;
 }
+.v-input--selection-controls{
+    margin-top: 0px !important;
+}
 .page-title-box {
     padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul.map-site{
+        list-style-type: none;
+        padding-left: 0px;
+            margin-bottom: 0px;
+        li{
+            display: inline-block;
+            color: #777;
+                font-size: 13px;
+                font-weight: 500;
+            a{
+                color: #333;
+                font-weight: 500;
+
+                font-size: 13px;
+
+                &:hover{
+                    color: $gc;
+                }
+            }
+        }
+    }
     h2 {
         font-size: 18px;
         margin-bottom: 0px;
@@ -29,7 +56,7 @@ a:hover {
 }
 div.box-white {
     background: #ffffff;
-    padding: 20px;
+    padding: 10px 20px;
     box-shadow: 0px 4px 10px rgba(234, 234, 234, 0.3);
     border-radius: 10px;
 }
@@ -58,11 +85,11 @@ div.box-title-top {
 }
 
 .data-table {
-    margin-top: 25px;
+    // margin-top: 25px;
 }
 .table-image {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     position: relative;
     overflow: hidden;
     border-radius: 5px;
@@ -102,6 +129,7 @@ ul {
 div.table-actions {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: flex-end;
     min-width: 80px !important;
     .__eye {
         margin-right: 7px;
@@ -163,7 +191,6 @@ div.table-actions {
 }
 
 .accordion-category {
-    margin-top: 30px;
     ul.tree-list {
         list-style-type: none;
         padding-left: 0px;

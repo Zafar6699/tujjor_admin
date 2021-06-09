@@ -2,7 +2,7 @@ export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     ssr: false,
     head: {
-        title: "shop",
+        title: "Tujjor-Admin",
         htmlAttrs: {
             lang: "en"
         },
@@ -108,8 +108,7 @@ export default {
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {
-        baseURL: "http://cdn.tujjor.org/api", // Used as fallback if no runtime config is provided
-        uploads: "http://cdn.tujjor.org"
+        baseURL: "http://cdn.tujjor.org/api" // Used as fallback if no runtime config is provided
     },
 
     // Build Configuration: https://go.nuxtjs.dev/config-build

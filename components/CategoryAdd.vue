@@ -9,7 +9,7 @@
                 <v-card v-if="modalInfo != null">
                     <div>
                         <v-card-title>
-                            Kategoriya qo'shish
+                            Добавить категорию
                         </v-card-title>
                     </div>
                     <v-card-subtitle>
@@ -19,14 +19,14 @@
                     <div class="modal_body">
                         <v-text-field
                             v-model="category.name.uz"
-                            label="Kategoriya nomi (Uz)"
+                            label="Категория (Уз)"
                             :rules="validate1"
                             outlined
                             dense
                         ></v-text-field>
                         <v-text-field
                             v-model="category.name.ru"
-                            label="Kategoriya nomi (Ru)"
+                            label="Категория (Ру)"
                             :rules="validate1"
                             outlined
                             dense
@@ -36,7 +36,7 @@
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn color="primary" text @click="addChildren">
-                            Qo'shish
+                            Добавить
                         </v-btn>
                     </v-card-actions>
                 </v-card>
