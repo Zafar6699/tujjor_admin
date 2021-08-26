@@ -1,16 +1,14 @@
 export const state = () => ({
-    count: 0,
-    uploads: "http://cdn.tujjor.org",
+    isLoading: false,
+    uploads: "http://cdn.tujjor.org/",
     categoryBrand: {}
 });
 export const mutations = {
-    add(state, info) {
-        state.count = 2;
+    CHANGE_LOADING(state) {
+        state.isLoading = !state.isLoading;
     },
-    CATEGORY_BRAND(state, item) {
-        state.categoryBrand = item;
+    CATEGORY_BRAND(state, info) {
+        state.categoryBrand = info;
     }
 };
-export const actions = {
-    async deleteCategory({ commit, state }) {}
-};
+export const actions = {};

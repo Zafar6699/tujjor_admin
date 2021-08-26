@@ -2,7 +2,7 @@
     <div>
         <v-select
             :items="category"
-            item-text="name.uz"
+            item-text="name.ru"
             :label="'Kатегория'"
             return-object
             outlined
@@ -39,6 +39,7 @@ export default {
 
     methods: {
         changeSelect() {
+            this.$emit("changeSelect");
             this.$store.commit("CATEGORY_BRAND", this.categoryModel);
         }
     }

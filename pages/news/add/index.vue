@@ -30,8 +30,10 @@
             <v-menu
                 ref="menu"
                 v-model="menu"
-                :close-on-content-click="true"
+                :close-on-content-click="false"
                 :return-value.sync="date"
+                transition="scale-transition"
+                offset-y
                 min-width="auto"
             >
                 <template v-slot:activator="{ on, attrs }">
@@ -44,7 +46,7 @@
                         v-on="on"
                     ></v-text-field>
                 </template>
-                <v-date-picker v-model="date" no-title>
+                <v-date-picker v-model="date" no-title scrollable>
                     <v-spacer></v-spacer>
                     <v-btn text color="primary" @click="menu = false">
                         Cancel
@@ -115,6 +117,7 @@ export default {
     data() {
         return {
             date: new Date().toISOString().substr(0, 10),
+            menu: false,
             validate: [value => !!value || "Обязательное поле !!!"],
             valid: true,
 
@@ -150,6 +153,7 @@ export default {
     methods: {
         addInfo() {
             let v1 = this.$refs.val.validate();
+            let d = new Date(this.date).toISOString();
             if (v1) {
                 let fd = new FormData();
 
@@ -158,7 +162,7 @@ export default {
                 fd.append("title[ru]", this.info.title.ru);
                 fd.append("description[uz]", this.info.description.uz);
                 fd.append("description[ru]", this.info.description.ru);
-                fd.append("startTime", this.date.substring(0, 10));
+                fd.append("startTime", d);
 
                 this.$axios({
                     method: "POST",

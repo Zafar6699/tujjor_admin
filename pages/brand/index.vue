@@ -33,8 +33,6 @@
                             :rules="validate1"
                             v-model="info.image"
                         ></v-file-input>
-
-                        <Select :category="category" />
                     </div>
 
                     <v-card-actions>
@@ -106,14 +104,12 @@ export default {
             modalAdd: false,
             modalEdit: false,
             isOpen: false,
-            category: [],
             id: "",
             validate1: [value => !!value || "Обязательное поле !!!"],
             valid1: true,
             header: [
                 { text: "Картина", value: "image" },
                 { text: "Название", value: "name" },
-                { text: "Категория", value: "category.name.uz" },
                 { text: "", value: "actions" }
             ],
             data: [],
@@ -131,9 +127,6 @@ export default {
     async mounted() {
         let data = await this.$axios.$get("/brand/all");
         this.data = data.data;
-
-        let category = await this.$axios.$get("/category/all");
-        this.category = category.data;
     },
     methods: {
         openInfo() {
@@ -158,26 +151,17 @@ export default {
 
                 let data = await this.$axios.$get("/brand/all");
                 this.data = data.data;
-
-                let category = await this.$axios.$get("/category/all");
-                this.category = category.data;
             });
         },
 
         addBrand() {
-            let item = this.$store.state.categoryBrand;
-
             let v = this.$refs.val1.validate();
 
             if (v) {
                 let fd = new FormData();
 
-                console.log(this.item);
-                console.log(item);
-
                 fd.append("name", this.info.name);
                 fd.append("image", this.info.image);
-                fd.append("category", item._id);
                 this.$axios({
                     url: "/brand/create",
                     method: "POST",
@@ -189,8 +173,7 @@ export default {
 
                     this.info.name = "";
                     this.info.image = "";
-
-                    this.$router.go();
+                    this.$refs.val1.reset();
                 });
             }
         }

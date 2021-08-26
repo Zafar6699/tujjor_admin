@@ -48,6 +48,16 @@
 
                 <template v-slot:item.actions="{ item }">
                     <div class="table-actions">
+                        <button
+                            type="button"
+                            class="__delete"
+                            v-if="
+                                type == 'application' || type == 'application2'
+                            "
+                            @click="$emit('openInfo', item)"
+                        >
+                            <fa class="eye-icon" icon="eye" />
+                        </button>
                         <nuxt-link
                             v-if="type == 'shop'"
                             type="button"
@@ -75,6 +85,9 @@
                             <fa class="edit-icon" icon="edit" />
                         </nuxt-link>
                         <button
+                            v-if="
+                                type != 'application' && type != 'application2'
+                            "
                             type="button"
                             class="__delete"
                             @click="$emit('deleteOpen', item._id)"

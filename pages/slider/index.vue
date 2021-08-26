@@ -83,7 +83,7 @@
             </button>
         </div>
 
-        <div class="flex-box box-white">
+        <div class="flex-box box-white" v-if="sliders.length > 0">
             <div
                 class="flex__item"
                 v-for="(item, index) in sliders"

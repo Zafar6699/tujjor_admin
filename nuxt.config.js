@@ -21,7 +21,7 @@ export default {
     css: ["@assets/scss/colors.scss"],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: ["@plugins/v-mask.js"],
+    plugins: ["@plugins/v-mask.js", "@plugins/axios.js"],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
@@ -72,6 +72,15 @@ export default {
     },
 
     auth: {
+        localStorage: {
+            prefix: "auth2."
+        },
+        cookie: {
+            prefix: "auth2.",
+            options: {
+                path: "/"
+            }
+        },
         redirect: {
             login: "/auth/login",
             logout: "/auth/login",
@@ -91,8 +100,9 @@ export default {
                     // autoFetch: true
                 },
                 endpoints: {
-                    login: { url: "/user/login", method: "post" },
-                    user: { url: "/user/me", method: "get" }
+                    login: { url: "/user/admin/login", method: "post" },
+                    user: { url: "/user/me", method: "get" },
+                    logout: false
                 }
             }
         }

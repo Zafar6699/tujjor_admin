@@ -13,6 +13,7 @@ export const mutations = {
         state.data = info;
     },
     openEdit(state, info) {
+        console.log(info);
         state.isEdit = !state.isEdit;
         state.dataEdit = info;
     },

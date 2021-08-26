@@ -67,6 +67,25 @@ a:hover {
   color: #333;
 }
 
+div.loading-center {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10001;
+  background: rgba(255, 255, 255, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 div.box-white {
   background: #ffffff;
   padding: 10px 20px;
@@ -296,5 +315,19 @@ div.table-actions .__delete {
 
 .accordion-category ul.tree-list li ul.active {
   display: block;
+}
+
+.info-item {
+  margin-bottom: 20px;
+}
+
+.info-item h6 {
+  font-size: 13px;
+  color: #666;
+}
+
+.info-item h4 {
+  font-size: 16px;
+  color: #333;
 }
 /*# sourceMappingURL=colors.css.map */

@@ -32,12 +32,28 @@
         </div>
 
         <div class="box-white">
-            <Table
-                :header="header"
-                :data="data"
-                :type="type"
-                @changeStatus="changeStatus"
-                @deleteOpen="deleteOpen"
+            <div class="data-table">
+                <v-data-table
+                    :headers="header"
+                    :items="data"
+                    :footer-props="{
+                        'items-per-page-text': ''
+                    }"
+                >
+                    <template v-slot:item.switch="{ item }">
+                        <v-switch v-model="item.status"></v-switch>
+                    </template>
+
+                    <template v-slot:item.actions="{ item }">
+                        <div class="table-actions"></div>
+                    </template>
+                </v-data-table>
+            </div>
+
+            <Select
+                @changeSelect="changeSelect"
+                :category="category"
+                class="col-12"
             />
         </div>
     </div>
@@ -49,14 +65,15 @@ export default {
         return {
             modal: false,
             header: [
-                { text: "Картина", value: "image" },
-                { text: "Названия", value: "name" },
-                { text: "Адресс", value: "info.address" },
-                { text: "Эмаил", value: "info.email" },
-                { text: "Статус", value: "status" },
+                { text: "Названия", value: "shopName" },
+                { text: "Адресс", value: "address" },
+                { text: "Эмаил", value: "email" },
+                { text: "Статус", value: "switch" },
                 { text: "", value: "actions" }
             ],
             data: [],
+
+            category: [],
 
             type: "shop"
         };
@@ -66,10 +83,16 @@ export default {
         let a = await this.$axios.$get("/shop/all");
 
         this.data = a.data;
+
+        console.log("shop-->", this.data);
+
+        let category = await this.$axios.$get("/category/all");
+        this.category = category.data;
     },
     methods: {
         changeStatus() {},
-        deleteOpen() {}
+        deleteOpen() {},
+        changeSelect(e) {}
     }
 };
 </script>
