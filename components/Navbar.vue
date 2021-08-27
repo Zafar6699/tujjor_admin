@@ -179,11 +179,11 @@ export default {
                     title: "Магазины"
                 },
 
-                // {
-                //     route: "/order",
-                //     ricon: "shopping-cart",
-                //     title: "Заказы"
-                // },
+                {
+                    route: "/users",
+                    ricon: "users",
+                    title: "Foydalanuvchilar"
+                },
                 {
                     route: "/brand",
                     ricon: "copyright",

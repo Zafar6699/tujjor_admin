@@ -20,7 +20,7 @@
         <div class="page-title-box">
             <h2>Dashboard</h2>
         </div>
-        <div class="dashboard-cards mt-3">
+        <div class="dashboard-cards mt-3" v-if="orders != null">
             <div class="row">
                 <div class="col-md-3">
                     <div class="cards__item">
@@ -30,40 +30,40 @@
                                 <fa icon="cubes" />
                             </span>
                         </div>
-                        <h3 class="text-success">1290</h3>
+                        <h3 class="text-success">{{orders.products}}</h3>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="cards__item">
                         <div class="card-top">
-                            <h2>Sotilgan mahsulotlar</h2>
+                            <h2>Buyurtmalar</h2>
                             <span class="__icon bg-info">
                                 <fa icon="cube" />
                             </span>
                         </div>
-                        <h3 class="text-info">1290</h3>
+                        <h3 class="text-info">{{orders.orders}}</h3>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="cards__item">
                         <div class="card-top">
-                            <h2>Oylik summa</h2>
+                            <h2>Do'konlar</h2>
                             <span class="__icon bg-danger">
                                 <fa icon="dollar-sign" />
                             </span>
                         </div>
-                        <h3 class="text-danger">1290</h3>
+                        <h3 class="text-danger">{{orders.shops}}</h3>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="cards__item">
                         <div class="card-top">
-                            <h2>Oylik summa</h2>
+                            <h2>Foydalanuvchilar</h2>
                             <span class="__icon bg-primary">
                                 <fa icon="cubes" />
                             </span>
                         </div>
-                        <h3 class="text-primary">1290</h3>
+                        <h3 class="text-primary">{{orders.users}}</h3>
                     </div>
                 </div>
             </div>
@@ -73,8 +73,8 @@
                 <h4>Все заказы</h4>
             </div>
 
-            <div class="data-table">
-                <v-data-table :headers="header" :items="dessert">
+            <div class="data-table" v-if="orders != null">
+                <v-data-table :headers="header" :items="orders.lastOrders">
                 </v-data-table>
             </div>
         </div>
@@ -85,55 +85,30 @@
 export default {
     data() {
         return {
+            orders: null,
+            action: null,
             modal: false,
             header: [
                 { text: "Rasmi", value: "image" },
-                { text: "Mahsulot nomi", value: "name" },
-                { text: "ID nomeri", value: "id" },
-                { text: "Narxi", value: "price" },
-                { text: "Soni", value: "count" },
+                { text: "Mahsulot nomi", value: "name.uz" },
+                { text: "ID nomeri", value: "orderId" },
+                { text: "Narxi", value: "amount" },
+                { text: "O`lchami", value: "size" },
                 { text: "Status", value: "status" },
                 { text: "", value: "actions" }
             ],
-            dessert: [
-                {
-                    image: "/_nuxt/assets/img/pro.png",
-                    name: "Nike Air 720 ",
-                    id: 240989,
-                    price: "400$",
-                    count: 30,
-                    status: 1,
-                    actions: "Actions"
-                },
-                {
-                    image: "/_nuxt/assets/img/pro.png",
-                    name: "Nike Air 720",
-                    id: 240989,
-                    price: "400$",
-                    count: 30,
-                    status: 1,
-                    actions: "Actions"
-                },
-                {
-                    image: "/_nuxt/assets/img/pro.png",
-                    name: "Nike Air 720",
-                    id: 240989,
-                    price: "400$",
-                    count: 30,
-                    status: 0,
-                    actions: "Actions"
-                },
-                {
-                    image: "/_nuxt/assets/img/pro.png",
-                    name: "Nike Air 720",
-                    id: 240989,
-                    price: "400$",
-                    count: 30,
-                    status: 0,
-                    actions: "Actions"
-                }
-            ]
+
         };
+    },
+   async mounted() {
+        let order = await this.$axios({
+            method: "get",
+            url: '/stat/dashboard',
+            headers:{
+                "Authorization":`Bearer ${localStorage.getItem('token')}`
+            }
+        })
+       this.orders = order.data
     }
 };
 </script>
